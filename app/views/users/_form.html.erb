@@ -1,0 +1,13 @@
+<% user_method = action == :new ? 'POST' : 'PATCH' %>
+<% submit_button = action == :new ? 'create user' : 'update user' %>
+
+<form action='/users' method= '<%= user_method %>' >
+  <label for='user[email]' id='user_email'> Email </label>
+  <input type='text' name='user[email]'>
+  <label for='user[password]' id='user_password'> Password </label>
+  <input type='password' name='user[password]' >
+
+  <%= form_auth %>
+
+  <input type='submit' value= "<%= submit_button %>" >
+</form>

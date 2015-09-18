@@ -1,0 +1,13 @@
+<% method = action == :new ? 'POST' : 'PATCH' %>
+<% action = action == :new ? albums_url : album_url(album) %>
+<% submit_button = action == :new ? 'create album' : 'update album' %>
+
+<form action='<%= action %>' method= 'POST' >
+  <input type='hidden' name='_method' value='<%= method %>'>
+  <label for='album[name]' id='album_name'> Name </label>
+  <input type='text' name='album[name]'>
+
+  <%= form_auth %>
+
+  <input type='submit' value="<%= submit_button %>" >
+</form>

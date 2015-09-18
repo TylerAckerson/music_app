@@ -1,0 +1,12 @@
+<h1>log in</h1>
+
+<form action='/session' method= 'POST' >
+  <label for='session[user][email]' id='session_user_email'> Email </label>
+  <input type='text' name='session[user][email]'>
+  <label for='session[user][password]' id='session_user_password'> Password </label>
+  <input type='password' name='session[user][password]' >
+
+  <%= form_auth %>
+
+  <input type='submit' value= "log in" >
+</form>

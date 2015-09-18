@@ -1,0 +1,13 @@
+<% band_method = action == :new ? 'POST' : 'PATCH' %>
+<% band_action = action == :new ? bands_url : band_url(band) %>
+<% submit_button = action == :new ? 'create band' : 'update band' %>
+
+<form action='<%= band_action %>' method= 'POST' >
+  <input type='hidden' name='_method' value='<%= band_method %>'>
+  <label for='band[name]' id='band_name'> Name </label>
+  <input type='text' name='band[name]'>
+
+  <%= form_auth %>
+
+  <input type='submit' value= "<%= submit_button %>" >
+</form>
